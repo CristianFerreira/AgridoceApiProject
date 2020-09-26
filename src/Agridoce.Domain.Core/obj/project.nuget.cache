@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "eXjxvyEfddI4ZIpSfXlFMbkaS2F5CcOgUKkFxyq6jtwUp6nfnl7V6JVEt2fFWHHicHGisKa1a6hlt+j6HctZpw==",
+  "dgSpecHash": "SU8f8qd4CvKtj1h4l5pp9PRcZ61pN+z9xedH05H8ffmYKoNH/F7Kb+Q8obCmpdka5izKIPQ2TmHmAJwdVoQHDg==",
   "success": true,
   "projectFilePath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

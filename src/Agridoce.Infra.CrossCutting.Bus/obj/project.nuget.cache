@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uyEqM4TGg7gtQ/5LHs3xEcA9mRCAoW3CoBpV1z80NuRjGgLMMefT8dry4ESbwJkU9AokofsO/srfbaPomOjyig==",
+  "dgSpecHash": "w0iphMPcvCvH0LKr8d2Vp18HsOnGilQYQuczctxoe7+gQ2LI1dbC+dX9de1iNQi+/MX9d+NuOI+P7ySxoITF2A==",
   "success": true,
   "projectFilePath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.Bus\\Agridoce.Infra.CrossCutting.Bus.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "JQQmBpiKrBYC+cecTmDEfJ45x6pksc74zwO2wK/+Sxw/yJ5KL/xvCqCKvrEBV3cfzWAJ6cLRix96bRNgIRUbzg==",
+  "dgSpecHash": "GlEKmViQlt6ktqRdkXyLDqoM0Vdz0F9xhH/NNb0KV2Zn12v9nlCOLKtnB5RLC/eoVDzPPFJwtnS6GlYhfSdBUw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.IoC\\Agridoce.Infra.CrossCutting.IoC.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.8\\microsoft.extensions.dependencyinjection.abstractions.3.1.8.nupkg.sha512"
+  ],
   "logs": []
 }
