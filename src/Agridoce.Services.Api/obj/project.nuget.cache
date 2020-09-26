@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "os95JTntULNAQL+swhBBsKnqcBpFD5rqZBNQBJpZ4UMBedanz2rS6Owj6n9xYtw029USWulsVwoTplVuRREeMg==",
+  "dgSpecHash": "HRZJ1AR7EanJSxgWSSdbbIQYLwtKN5QZwdXnVf0P4o6dHIHrb8BqrdCNv1rr3kUi0wEuKthXV33PcyvREFmnOw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\Agridoce.Services.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.1.0\\mediatr.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",

@@ -29,6 +29,10 @@ namespace Agridoce.Services.Api
 
             // Swagger Config
             services.AddSwaggerConfiguration();
+
+            // MediatR config
+            services.AddMediatRConfiguration();
+
         }
 
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -49,8 +53,6 @@ namespace Agridoce.Services.Api
                 c.AllowAnyOrigin();
             });
 
-            //app.UseAuthConfiguration();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -58,5 +60,7 @@ namespace Agridoce.Services.Api
 
             app.UseSwaggerSetup();
         }
+
+       
     }
 }
