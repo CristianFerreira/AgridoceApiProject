@@ -12,8 +12,7 @@ namespace Agridoce.Services.Api.Configurations
         {
             HttpStatusCode status = HttpStatusCode.InternalServerError;
             var contextException = context.Exception;
-            object result = null;
-            result = new { success = false, errors = contextException };
+            object result = new { success = false, errors = contextException };
             var messageException = contextException.InnerException.InnerException != null ?
                                    contextException.InnerException.InnerException.Message : contextException.InnerException.Message;
 
