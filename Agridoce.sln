@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agridoce", "Agridoce\Agridoce.csproj", "{03375C98-8C4F-43F3-A7B4-8BE9191592DC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{13DB9370-D429-4613-8F67-561294A9FACA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{20F3C26E-43BB-4067-B63F-EC007FF81CE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{402220F9-49FB-4051-BBC5-0451D9FAADF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{08C44277-D89E-4C2F-B8F2-36B06B4C4BE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{9D46C671-8916-4AD3-96F2-1CAE7E96A5E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{554CAF06-5BF7-49E4-A507-002BAD928CEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agridoce.Services.Api", "src\Agridoce.Services.Api\Agridoce.Services.Api.csproj", "{38B73B74-F039-4826-80B7-94773287E64D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agridoce.Domain", "src\Agridoce.Domain\Agridoce.Domain.csproj", "{A3BCC6A4-608E-4D01-90A7-0061A1E4580E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agridoce.Application", "src\Agridoce.Application\Agridoce.Application.csproj", "{A36A3A66-C03F-4B28-AD70-61AEF85A3049}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agridoce.Domain.Core", "src\Agridoce.Domain.Core\Agridoce.Domain.Core.csproj", "{1083DDDD-FD97-435D-8483-CBB859EF9EAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agridoce.Infra.Data", "src\Agridoce.Infra.Data\Agridoce.Infra.Data.csproj", "{3FD11320-171A-49E7-B55E-9CC48124EA2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agridoce.Infra.CrossCutting.Bus", "src\Agridoce.Infra.CrossCutting.Bus\Agridoce.Infra.CrossCutting.Bus.csproj", "{8BB8CDD1-F39F-47BC-90E3-442737CFC537}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agridoce.Infra.CrossCutting.IoC", "src\Agridoce.Infra.CrossCutting.IoC\Agridoce.Infra.CrossCutting.IoC.csproj", "{05728901-DAE2-48AB-91B4-E95CA51C754D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +35,46 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{03375C98-8C4F-43F3-A7B4-8BE9191592DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03375C98-8C4F-43F3-A7B4-8BE9191592DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03375C98-8C4F-43F3-A7B4-8BE9191592DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03375C98-8C4F-43F3-A7B4-8BE9191592DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B73B74-F039-4826-80B7-94773287E64D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B73B74-F039-4826-80B7-94773287E64D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B73B74-F039-4826-80B7-94773287E64D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B73B74-F039-4826-80B7-94773287E64D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3BCC6A4-608E-4D01-90A7-0061A1E4580E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3BCC6A4-608E-4D01-90A7-0061A1E4580E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3BCC6A4-608E-4D01-90A7-0061A1E4580E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3BCC6A4-608E-4D01-90A7-0061A1E4580E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A36A3A66-C03F-4B28-AD70-61AEF85A3049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36A3A66-C03F-4B28-AD70-61AEF85A3049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36A3A66-C03F-4B28-AD70-61AEF85A3049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36A3A66-C03F-4B28-AD70-61AEF85A3049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1083DDDD-FD97-435D-8483-CBB859EF9EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1083DDDD-FD97-435D-8483-CBB859EF9EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1083DDDD-FD97-435D-8483-CBB859EF9EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1083DDDD-FD97-435D-8483-CBB859EF9EAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD11320-171A-49E7-B55E-9CC48124EA2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD11320-171A-49E7-B55E-9CC48124EA2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD11320-171A-49E7-B55E-9CC48124EA2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD11320-171A-49E7-B55E-9CC48124EA2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB8CDD1-F39F-47BC-90E3-442737CFC537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB8CDD1-F39F-47BC-90E3-442737CFC537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB8CDD1-F39F-47BC-90E3-442737CFC537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB8CDD1-F39F-47BC-90E3-442737CFC537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05728901-DAE2-48AB-91B4-E95CA51C754D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05728901-DAE2-48AB-91B4-E95CA51C754D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05728901-DAE2-48AB-91B4-E95CA51C754D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05728901-DAE2-48AB-91B4-E95CA51C754D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38B73B74-F039-4826-80B7-94773287E64D} = {13DB9370-D429-4613-8F67-561294A9FACA}
+		{A3BCC6A4-608E-4D01-90A7-0061A1E4580E} = {402220F9-49FB-4051-BBC5-0451D9FAADF7}
+		{A36A3A66-C03F-4B28-AD70-61AEF85A3049} = {20F3C26E-43BB-4067-B63F-EC007FF81CE5}
+		{1083DDDD-FD97-435D-8483-CBB859EF9EAB} = {402220F9-49FB-4051-BBC5-0451D9FAADF7}
+		{3FD11320-171A-49E7-B55E-9CC48124EA2C} = {9D46C671-8916-4AD3-96F2-1CAE7E96A5E5}
+		{8BB8CDD1-F39F-47BC-90E3-442737CFC537} = {554CAF06-5BF7-49E4-A507-002BAD928CEB}
+		{05728901-DAE2-48AB-91B4-E95CA51C754D} = {554CAF06-5BF7-49E4-A507-002BAD928CEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B0F680B-1CE2-45FD-B953-B0379D7372F3}
