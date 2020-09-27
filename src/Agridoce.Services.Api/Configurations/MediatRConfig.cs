@@ -11,6 +11,8 @@ namespace Agridoce.Services.Api.Configurations
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
+           var x =  AppDomain.CurrentDomain.GetAssemblies();
+
             var assembly = AppDomain.CurrentDomain.Load("Agridoce.Domain");
             AssemblyScanner
                 .FindValidatorsInAssembly(assembly)

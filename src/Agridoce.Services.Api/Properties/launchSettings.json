@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Agridoce.Services.Api": {
+    "Agridoce.Services.Api - Development": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

@@ -115,6 +115,19 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Agridoce.Domain.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "MediatR": "8.1.0"
+        },
+        "compile": {
+          "bin/placeholder/Agridoce.Domain.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Agridoce.Domain.Core.dll": {}
+        }
       }
     }
   },
@@ -284,10 +297,16 @@
         "swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Agridoce.Domain.Core/1.0.0": {
+      "type": "project",
+      "path": "../Agridoce.Domain.Core/Agridoce.Domain.Core.csproj",
+      "msbuildProject": "../Agridoce.Domain.Core/Agridoce.Domain.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Agridoce.Domain.Core >= 1.0.0",
       "FluentValidation >= 9.2.2",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 8.1.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
@@ -322,7 +341,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj": {
+              "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

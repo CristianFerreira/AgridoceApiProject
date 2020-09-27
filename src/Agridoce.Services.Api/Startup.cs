@@ -31,7 +31,7 @@ namespace Agridoce.Services.Api
             services.AddSwaggerConfiguration();
 
             // MediatR config
-            services.AddMediatRConfiguration();
+            //services.AddMediatRConfiguration();
 
         }
 
