@@ -20,6 +20,16 @@ namespace Agridoce.Domain.Core
             _bus.PublishEvent(new DomainNotification(key, message));
         }
 
+        protected async Task PublishEventAsync(Event @event)
+        {
+            await _bus.PublishEvent(@event);
+        }
+
+        protected void PublishEvent(Event @event)
+        {
+            _bus.PublishEvent(@event);
+        }
+
         protected async Task<ICommandResult> CompletedTask(IEntity data = null)
         {
             return await Task.FromResult(new CommandResult(data));
