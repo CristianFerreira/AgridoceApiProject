@@ -4,6 +4,71 @@
     "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\Agridoce.Services.Api.csproj": {}
   },
   "projects": {
+    "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Application\\Agridoce.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Application\\Agridoce.Application.csproj",
+        "projectName": "Agridoce.Application",
+        "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Application\\Agridoce.Application.csproj",
+        "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain\\Agridoce.Domain.csproj": {
+                "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain\\Agridoce.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -65,14 +130,14 @@
         }
       }
     },
-    "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\Agridoce.Services.Api.csproj": {
+    "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain\\Agridoce.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\Agridoce.Services.Api.csproj",
-        "projectName": "Agridoce.Services.Api",
-        "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\Agridoce.Services.Api.csproj",
+        "projectUniqueName": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain\\Agridoce.Domain.csproj",
+        "projectName": "Agridoce.Domain",
+        "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain\\Agridoce.Domain.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\obj\\",
+        "outputPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -105,7 +170,210 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.Bus\\Agridoce.Infra.CrossCutting.Bus.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.Bus\\Agridoce.Infra.CrossCutting.Bus.csproj",
+        "projectName": "Agridoce.Infra.CrossCutting.Bus",
+        "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.Bus\\Agridoce.Infra.CrossCutting.Bus.csproj",
+        "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.Bus\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj": {
+                "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.IoC\\Agridoce.Infra.CrossCutting.IoC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.IoC\\Agridoce.Infra.CrossCutting.IoC.csproj",
+        "projectName": "Agridoce.Infra.CrossCutting.IoC",
+        "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.IoC\\Agridoce.Infra.CrossCutting.IoC.csproj",
+        "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.IoC\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Application\\Agridoce.Application.csproj": {
+                "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Application\\Agridoce.Application.csproj"
+              },
+              "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj": {
+                "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj"
+              },
+              "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.Bus\\Agridoce.Infra.CrossCutting.Bus.csproj": {
+                "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.Bus\\Agridoce.Infra.CrossCutting.Bus.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\Agridoce.Services.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\Agridoce.Services.Api.csproj",
+        "projectName": "Agridoce.Services.Api",
+        "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\Agridoce.Services.Api.csproj",
+        "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Application\\Agridoce.Application.csproj": {
+                "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Application\\Agridoce.Application.csproj"
+              },
+              "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj": {
+                "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj"
+              },
+              "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.IoC\\Agridoce.Infra.CrossCutting.IoC.csproj": {
+                "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.IoC\\Agridoce.Infra.CrossCutting.IoC.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[9.2.2, )"

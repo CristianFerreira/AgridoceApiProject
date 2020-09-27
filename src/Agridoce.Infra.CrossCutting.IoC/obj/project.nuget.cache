@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "GlEKmViQlt6ktqRdkXyLDqoM0Vdz0F9xhH/NNb0KV2Zn12v9nlCOLKtnB5RLC/eoVDzPPFJwtnS6GlYhfSdBUw==",
+  "dgSpecHash": "25s7aVEk8nAybaUfp+Ediw48a0retcZdEqXiT8tXe6Si2fIycMhkNskK1+TVp3gmIbB/krHZmK0eQo2s6vpYNw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.IoC\\Agridoce.Infra.CrossCutting.IoC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
-    "C:\\Users\\crist\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.8\\microsoft.extensions.dependencyinjection.abstractions.3.1.8.nupkg.sha512"
+    "C:\\Users\\crist\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.8\\microsoft.extensions.dependencyinjection.abstractions.3.1.8.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

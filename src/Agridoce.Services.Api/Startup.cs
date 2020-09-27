@@ -30,8 +30,16 @@ namespace Agridoce.Services.Api
             // Swagger Config
             services.AddSwaggerConfiguration();
 
+            // AutoMapper Settings
+            services.AddAutoMapperConfiguration();
+
             // MediatR config
-            //services.AddMediatRConfiguration();
+            services.AddMediatRConfiguration();
+
+            // .NET Native DI Abstraction
+            services.AddDependencyInjectionConfiguration();
+
+       
 
         }
 
