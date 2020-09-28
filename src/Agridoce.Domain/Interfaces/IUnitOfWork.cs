@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using System;
 
-namespace Agridoce.Domain.Core
+namespace Agridoce.Domain.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-        bool Commit();
-        bool Commit(IDbContextTransaction transaction);
+        bool Commit(IDbContextTransaction transaction = null);
         void Rollback(IDbContextTransaction transaction);
         IDbContextTransaction BeginTransaction();
     }

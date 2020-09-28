@@ -1,5 +1,4 @@
 ﻿using Agridoce.Domain.Models;
-using Agridoce.Infra.Data.Configurations;
 using Agridoce.Infra.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,9 +17,5 @@ namespace Agridoce.Infra.Data.Context
             base.OnModelCreating(modelBuilder);
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(ConnectionStringConfiguration.ConnectionString());
-        }
     }
 }

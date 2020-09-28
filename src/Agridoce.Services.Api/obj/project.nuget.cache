@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qTPidFC84euUgSPVjqF5ehLsu4sFsKWKlGWDYGgbVNpdkOl8+fuGsttH7pqZ5l/PSQG/nirTRQ3bYqWa3T594A==",
+  "dgSpecHash": "Ta0XIZ6bBzeUXAc4rH5iP2vrjSYHzP1MUNLrXmnSEskMch9XJW65JI3UorYJoalGXjAl6b7b4C1IdkgQ3hYKWA==",
   "success": true,
   "projectFilePath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Services.Api\\Agridoce.Services.Api.csproj",
   "expectedPackageFiles": [
@@ -20,8 +20,10 @@
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.8\\microsoft.entityframeworkcore.3.1.8.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.8\\microsoft.entityframeworkcore.abstractions.3.1.8.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.8\\microsoft.entityframeworkcore.analyzers.3.1.8.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.8\\microsoft.entityframeworkcore.design.3.1.8.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.8\\microsoft.entityframeworkcore.relational.3.1.8.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.8\\microsoft.entityframeworkcore.sqlserver.3.1.8.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.8\\microsoft.entityframeworkcore.tools.3.1.8.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.8\\microsoft.extensions.caching.abstractions.3.1.8.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.8\\microsoft.extensions.caching.memory.3.1.8.nupkg.sha512",

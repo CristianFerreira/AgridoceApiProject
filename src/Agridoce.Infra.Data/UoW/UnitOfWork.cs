@@ -1,4 +1,5 @@
-﻿using Agridoce.Domain.Core;
+﻿
+using Agridoce.Domain.Interfaces;
 using Agridoce.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -18,12 +19,19 @@ namespace Agridoce.Infra.Data.UoW
             return _context.Database.BeginTransaction();
         }
 
-        public bool Commit()
+        public bool Commit(IDbContextTransaction transaction = null)
         {
-            return _context.SaveChanges() > 0;
+            return transaction == null ? 
+                        _context.SaveChanges() > 0 : 
+                        CommitDbContextTransaction(transaction);
+        } 
+
+        public void Rollback(IDbContextTransaction transaction)
+        {
+            transaction.Rollback();
         }
 
-        public bool Commit(IDbContextTransaction transaction)
+        private bool CommitDbContextTransaction(IDbContextTransaction transaction)
         {
             try
             {
@@ -37,11 +45,6 @@ namespace Agridoce.Infra.Data.UoW
                 throw ex;
             }
 
-        }
-
-        public void Rollback(IDbContextTransaction transaction)
-        {
-            transaction.Rollback();
         }
 
         public void Dispose()

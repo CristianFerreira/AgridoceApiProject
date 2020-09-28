@@ -2,7 +2,6 @@
 using Agridoce.Domain.Interfaces;
 using Agridoce.Domain.Models;
 using MediatR;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,9 +12,10 @@ namespace Agridoce.Domain.Commands.Handlers
     {
         private readonly ITestRepository _testRepository;
 
-        public TestCommandHandler(ITestRepository testRepository,
+        public TestCommandHandler(IUnitOfWork uow,
+                                  ITestRepository testRepository,
                                   IMediatorHandler mediator,
-                                  INotificationHandler<DomainNotification> notifications) : base(mediator, notifications)
+                                  INotificationHandler<DomainNotification> notifications) : base(uow, mediator, notifications)
         {
             _testRepository = testRepository;
         }
@@ -32,7 +32,8 @@ namespace Agridoce.Domain.Commands.Handlers
             var test = new Test(request.Id, request.Name);
             _testRepository.Add(test);
 
-            return CompletedTask();
+            Commit();
+            return CompletedTask(test);
         }
     }
 }

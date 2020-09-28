@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Agridoce.Domain.Core;
+using System;
 
 namespace Agridoce.Domain.Models
 {
-    public class Test
+    public class Test :IEntity
     {
         public Test(Guid id, string name)
         {

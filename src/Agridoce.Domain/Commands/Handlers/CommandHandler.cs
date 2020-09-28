@@ -1,18 +1,33 @@
-﻿using MediatR;
+﻿using Agridoce.Domain.Core;
+using Agridoce.Domain.Interfaces;
+using MediatR;
+using Microsoft.EntityFrameworkCore.Storage;
 using System.Threading.Tasks;
 
-namespace Agridoce.Domain.Core
+namespace Agridoce.Domain
 {
     public abstract class CommandHandler
     {
+        protected readonly IUnitOfWork _uow;
         private readonly IMediatorHandler _bus;
         protected readonly DomainNotificationHandler _notifications;
 
-        public CommandHandler(IMediatorHandler bus,
+        public CommandHandler(IUnitOfWork uow,
+                              IMediatorHandler bus,
                               INotificationHandler<DomainNotification> notifications)
         {
+            _uow = uow;
             _notifications = (DomainNotificationHandler)notifications;
             _bus = bus;
+        }
+
+        protected bool Commit(IDbContextTransaction transaction = null)
+        {
+            if (_notifications.HasNotifications()) return false;
+            if (_uow.Commit(transaction)) return true;
+
+            AddError("Commit", "Ocorreu um problema ao salvar seus dados.");
+            return false;
         }
 
         protected void AddError(string key, string message)

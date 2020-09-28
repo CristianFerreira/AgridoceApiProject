@@ -1,9 +1,6 @@
-using Agridoce.Infra.Data.Configurations;
-using Agridoce.Infra.Data.Context;
 using Agridoce.Services.Api.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,9 +14,9 @@ namespace Agridoce.Services.Api
         public Startup(IHostEnvironment env)
         {
             var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", true, true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true);
+                 .SetBasePath(env.ContentRootPath)
+                 .AddJsonFile("appsettings.json", true, true)
+                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true);
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
@@ -27,9 +24,8 @@ namespace Agridoce.Services.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddDbContext<AgridoceContext>(options =>
-                  options.UseSqlServer(ConnectionStringConfiguration.ConnectionString()));
+            // Setting DBContexts
+            services.AddDatabaseConfiguration(Configuration);
 
             // WebAPI Config
             services.AddControllers();

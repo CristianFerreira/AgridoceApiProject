@@ -14,4 +14,8 @@
     <ProjectReference Include="..\Agridoce.Domain\Agridoce.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+  </ItemGroup>
+
 </Project>
