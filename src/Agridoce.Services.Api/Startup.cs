@@ -1,6 +1,9 @@
+using Agridoce.Infra.Data.Configurations;
+using Agridoce.Infra.Data.Context;
 using Agridoce.Services.Api.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +27,10 @@ namespace Agridoce.Services.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<AgridoceContext>(options =>
+                  options.UseSqlServer(ConnectionStringConfiguration.ConnectionString()));
+
             // WebAPI Config
             services.AddControllers();
 

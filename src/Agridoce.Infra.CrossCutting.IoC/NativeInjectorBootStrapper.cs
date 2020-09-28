@@ -3,8 +3,13 @@ using Agridoce.Application.Services;
 using Agridoce.Domain.Commands;
 using Agridoce.Domain.Commands.Handlers;
 using Agridoce.Domain.Core;
+using Agridoce.Domain.Interfaces;
 using Agridoce.Infra.CrossCutting.Bus;
+using Agridoce.Infra.Data.Context;
+using Agridoce.Infra.Data.Repositories;
+using Agridoce.Infra.Data.UoW;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Agridoce.Infra.CrossCutting.IoC
@@ -28,6 +33,17 @@ namespace Agridoce.Infra.CrossCutting.IoC
 
             //Handler
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
+
+            //Context
+            services.AddScoped<AgridoceContext>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            //Repository
+            services.AddScoped<ITestRepository, TestRepository>(); 
+
+
+
         }
 
     }
