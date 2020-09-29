@@ -27,6 +27,9 @@ namespace Agridoce.Services.Api
             // Setting DBContexts
             services.AddDatabaseConfiguration(Configuration);
 
+            // ASP.NET Identity Settings
+            services.AddIdentityConfiguration();
+
             // WebAPI Config
             services.AddControllers();
 
@@ -41,9 +44,6 @@ namespace Agridoce.Services.Api
 
             // .NET Native DI Abstraction
             services.AddDependencyInjectionConfiguration();
-
-       
-
         }
 
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)

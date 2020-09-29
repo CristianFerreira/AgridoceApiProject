@@ -1,11 +1,13 @@
 ﻿using Agridoce.Domain.Models;
+using Agridoce.Infra.Data.Configurations;
 using Agridoce.Infra.Data.Mappings;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
+using System;
 
 namespace Agridoce.Infra.Data.Context
 {
-    public class AgridoceContext : DbContext
+    public class AgridoceContext : IdentityDbContext<User, Role, Guid>
     {
         public DbSet<Test> Tests { get; set; }
 
@@ -13,7 +15,9 @@ namespace Agridoce.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new TestMap());
+            modelBuilder.AddIdentityTableConfiguration();
+            modelBuilder.AddMapConfiguration();
+
             base.OnModelCreating(modelBuilder);
         }
 
