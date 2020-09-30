@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Agridoce.Application.Interfaces;
 using Agridoce.Application.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Agridoce.Services.Api.Controllers
 {
@@ -19,6 +20,7 @@ namespace Agridoce.Services.Api.Controllers
             _testService = testService;
         }
 
+        [Authorize]
         [HttpPost("register")]
         public async Task<IActionResult> Register(TestViewModel testViewModel)
         {

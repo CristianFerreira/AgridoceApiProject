@@ -30,6 +30,9 @@ namespace Agridoce.Services.Api
             // ASP.NET Identity Settings
             services.AddIdentityConfiguration();
 
+            // JWT
+            services.AddTokenConfiguration(Configuration);
+
             // WebAPI Config
             services.AddControllers();
 
@@ -55,7 +58,9 @@ namespace Agridoce.Services.Api
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseRouting();
+            app.UseAuthorization();
 
             app.UseCors(c =>
             {
