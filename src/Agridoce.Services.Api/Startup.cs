@@ -47,6 +47,7 @@ namespace Agridoce.Services.Api
 
             // .NET Native DI Abstraction
             services.AddDependencyInjectionConfiguration();
+
         }
 
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -58,9 +59,7 @@ namespace Agridoce.Services.Api
 
             app.UseHttpsRedirection();
 
-            app.UseAuthentication();
             app.UseRouting();
-            app.UseAuthorization();
 
             app.UseCors(c =>
             {
@@ -68,6 +67,9 @@ namespace Agridoce.Services.Api
                 c.AllowAnyMethod();
                 c.AllowAnyOrigin();
             });
+
+            app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

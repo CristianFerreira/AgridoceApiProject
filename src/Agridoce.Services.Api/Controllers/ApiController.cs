@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace Agridoce.Services.Api.Controllers
 {
+    [ApiController]
     public abstract class ApiController : ControllerBase
     {
         private readonly DomainNotificationHandler _notifications;
@@ -15,7 +16,7 @@ namespace Agridoce.Services.Api.Controllers
 
         protected bool IsValidOperation() => (!_notifications.HasNotifications());
 
-        protected new IActionResult Response(dynamic result)
+        protected new IActionResult Response(dynamic result = null)
         {
             if (IsValidOperation())
             {

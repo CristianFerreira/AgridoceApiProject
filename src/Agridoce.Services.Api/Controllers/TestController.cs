@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 using Agridoce.Application.Interfaces;
 using Agridoce.Application.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using static Agridoce.Services.Api.Extensions.CustomAuthorization;
 
 namespace Agridoce.Services.Api.Controllers
 {
-    [Route("api/test")]
+    [Authorize]
+    [Route("api/[controller]")]
     public class TestController : ApiController
     {
         private readonly ITestService _testService;
@@ -20,11 +22,11 @@ namespace Agridoce.Services.Api.Controllers
             _testService = testService;
         }
 
-        [Authorize]
+        [ClaimsAuthorize("test", "register")]
         [HttpPost("register")]
         public async Task<IActionResult> Register(TestViewModel testViewModel)
         {
             return Response(await _testService.Register(testViewModel));
-        }
+        } 
     }
 }
