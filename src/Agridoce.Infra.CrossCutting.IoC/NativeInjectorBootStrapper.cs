@@ -1,9 +1,8 @@
 ﻿using Agridoce.Application.Interfaces;
 using Agridoce.Application.Services;
-using Agridoce.Domain.Commands;
-using Agridoce.Domain.Commands.AccountCommand;
+using Agridoce.Domain.Commands.Handlers;
+using Agridoce.Domain.Commands.Types.AccountCommand;
 using Agridoce.Domain.Core;
-using Agridoce.Domain.Handlers;
 using Agridoce.Domain.Interfaces;
 using Agridoce.Domain.Services;
 using Agridoce.Infra.CrossCutting.Bus;

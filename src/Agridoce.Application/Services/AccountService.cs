@@ -1,6 +1,6 @@
 ﻿using Agridoce.Application.Interfaces;
 using Agridoce.Application.ViewModels.AccountViewModels;
-using Agridoce.Domain.Commands.AccountCommand;
+using Agridoce.Domain.Commands.Types.AccountCommand;
 using Agridoce.Domain.Core;
 using Agridoce.Domain.Interfaces;
 using Agridoce.Domain.Models;

@@ -1,4 +1,4 @@
-﻿namespace Agridoce.Domain.Commands.AccountCommand
+﻿namespace Agridoce.Domain.Commands.Types.AccountCommand
 {
     public class LoginAccountCommand :AccountCommand
     {

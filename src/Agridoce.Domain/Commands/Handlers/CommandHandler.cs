@@ -4,7 +4,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Threading.Tasks;
 
-namespace Agridoce.Domain.Handlers
+namespace Agridoce.Domain.Commands.Handlers
 {
     public abstract class CommandHandler
     {

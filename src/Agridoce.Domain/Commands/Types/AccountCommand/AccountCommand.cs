@@ -1,7 +1,7 @@
 ﻿using Agridoce.Domain.Core;
 using System;
 
-namespace Agridoce.Domain.Commands.AccountCommand
+namespace Agridoce.Domain.Commands.Types.AccountCommand
 {
     public class AccountCommand : Command
     {

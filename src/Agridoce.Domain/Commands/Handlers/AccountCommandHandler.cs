@@ -1,4 +1,4 @@
-﻿using Agridoce.Domain.Commands.AccountCommand;
+﻿using Agridoce.Domain.Commands.Types.AccountCommand;
 using Agridoce.Domain.Core;
 using Agridoce.Domain.Interfaces;
 using Agridoce.Domain.Models;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Agridoce.Domain.Handlers
+namespace Agridoce.Domain.Commands.Handlers
 {
     public class AccountCommandHandler : CommandHandler,
           IRequestHandler<RegisterAccountCommand, ICommandResult>,
@@ -32,7 +32,7 @@ namespace Agridoce.Domain.Handlers
 
         public async Task<ICommandResult> Handle(RegisterAccountCommand command, CancellationToken cancellationToken)
         {
-            using (var transaction = _uow.BeginTransaction())
+            using var transaction = _uow.BeginTransaction();
             {
                 var user = new User(command.Id, command.Email);
                 var result = await _userManager.CreateAsync(user, command.Password);

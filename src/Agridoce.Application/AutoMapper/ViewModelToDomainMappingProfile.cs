@@ -1,7 +1,5 @@
-﻿using Agridoce.Application.ViewModels;
-using Agridoce.Application.ViewModels.AccountViewModels;
-using Agridoce.Domain.Commands;
-using Agridoce.Domain.Commands.AccountCommand;
+﻿using Agridoce.Application.ViewModels.AccountViewModels;
+using Agridoce.Domain.Commands.Types.AccountCommand;
 using AutoMapper;
 
 namespace Agridoce.Application.AutoMapper
