@@ -1,6 +1,7 @@
 ﻿using Agridoce.Domain.Core;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Agridoce.Services.Api.Controllers
@@ -20,18 +21,39 @@ namespace Agridoce.Services.Api.Controllers
         {
             if (IsValidOperation())
             {
-                return Ok(new
+                return Ok(new SuccessfulResponse<dynamic>
                 {
-                    success = true,
-                    data = (result is ICommandResult) ? result.Data : result
+                    Data = (result is ICommandResult) ? result.Data : result
                 });
             }
 
-            return BadRequest(new
+            return BadRequest(new ErrorResponse
             {
-                success = false,
-                errors = _notifications.GetNotifications().Select(n => n.Value)
+                Errors = _notifications.GetNotifications().Select(n => n.Value)
             });
         }
+    }
+
+    public class SuccessfulResponse<T>
+    {
+        public SuccessfulResponse()
+        {
+            Success = true;
+        }
+
+        public bool Success { get; set; }
+        public T Data { get; set; }
+    }
+
+    public class ErrorResponse
+    {
+        public ErrorResponse()
+        {
+            Success = false;
+            Errors = new List<string>();
+        }
+
+        public bool Success { get; set; }
+        public IEnumerable<string> Errors { get; set; }
     }
 }

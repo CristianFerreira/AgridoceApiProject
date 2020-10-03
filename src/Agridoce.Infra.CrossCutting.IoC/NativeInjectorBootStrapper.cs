@@ -1,9 +1,11 @@
 ﻿using Agridoce.Application.Interfaces;
 using Agridoce.Application.Services;
 using Agridoce.Domain.Commands;
-using Agridoce.Domain.Commands.Handlers;
+using Agridoce.Domain.Commands.AccountCommand;
 using Agridoce.Domain.Core;
+using Agridoce.Domain.Handlers;
 using Agridoce.Domain.Interfaces;
+using Agridoce.Domain.Services;
 using Agridoce.Infra.CrossCutting.Bus;
 using Agridoce.Infra.Data.Context;
 using Agridoce.Infra.Data.Repositories;
@@ -26,10 +28,12 @@ namespace Agridoce.Infra.CrossCutting.IoC
             services.AddScoped<IMediatorHandler, InMemoryBus>();
 
             // Application
-            services.AddScoped<ITestService, TestService>();
+            services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<ITokenService, TokenService>();
 
             // Domain - Commands
-            services.AddScoped<IRequestHandler<RegisterNewTestCommand, ICommandResult>, TestCommandHandler>();
+            services.AddScoped<IRequestHandler<RegisterAccountCommand, ICommandResult>, AccountCommandHandler>();
+            services.AddScoped<IRequestHandler<LoginAccountCommand, ICommandResult>, AccountCommandHandler>();
 
             //Handler
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();

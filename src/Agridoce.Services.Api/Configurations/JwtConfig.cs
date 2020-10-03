@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Agridoce.Domain.Configurations;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
-using Agridoce.Services.Api.Extensions;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Agridoce.Services.Api.Configurations
 {
@@ -16,9 +16,9 @@ namespace Agridoce.Services.Api.Configurations
             if (services == null) throw new ArgumentNullException(nameof(services));
 
             var appSettingsSection = configuration.GetSection("AppJwtSettings");
-            services.Configure<AppJwtSettings>(appSettingsSection);
+            services.Configure<TokenConfiguration>(appSettingsSection);
 
-            var appSettings = appSettingsSection.Get<AppJwtSettings>();
+            var appSettings = appSettingsSection.Get<TokenConfiguration>();
             var key = Encoding.ASCII.GetBytes(appSettings.SecretKey);
 
             services.AddAuthentication(x =>

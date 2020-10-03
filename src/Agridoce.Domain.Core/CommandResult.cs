@@ -2,7 +2,7 @@
 {
     public class CommandResult : ICommandResult
     {
-        public CommandResult(IEntity data = null) => Data = data;
-        public IEntity Data { get; private set; }
+        public CommandResult(dynamic data = null) => Data = data;
+        public dynamic Data { get; private set; }
     }
 }

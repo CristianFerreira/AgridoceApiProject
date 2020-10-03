@@ -4,7 +4,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Threading.Tasks;
 
-namespace Agridoce.Domain
+namespace Agridoce.Domain.Handlers
 {
     public abstract class CommandHandler
     {
@@ -35,6 +35,11 @@ namespace Agridoce.Domain
             _bus.PublishEvent(new DomainNotification(key, message));
         }
 
+        protected void AddError(string message)
+        {
+            _bus.PublishEvent(new DomainNotification(string.Empty, message));
+        }
+
         protected async Task PublishEventAsync(Event @event)
         {
             await _bus.PublishEvent(@event);
@@ -45,14 +50,25 @@ namespace Agridoce.Domain
             _bus.PublishEvent(@event);
         }
 
-        protected async Task<ICommandResult> CompletedTask(IEntity data = null)
+        protected async Task<ICommandResult> CompletedTaskAsync(dynamic data = null)
         {
             return await Task.FromResult(new CommandResult(data));
         }
 
-        protected async Task<ICommandResult> CanceledTask()
+        protected ICommandResult CompletedTask(dynamic data = null)
+        {
+            return new CommandResult(data);
+        }
+
+
+        protected async Task<ICommandResult> CanceledTaskAsync()
         {
             return await Task.FromResult(new CommandResult());
+        }
+
+        protected ICommandResult CanceledTask()
+        {
+            return new CommandResult();
         }
 
     }

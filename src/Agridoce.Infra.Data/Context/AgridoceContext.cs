@@ -1,6 +1,5 @@
 ﻿using Agridoce.Domain.Models;
 using Agridoce.Infra.Data.Configurations;
-using Agridoce.Infra.Data.Mappings;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;

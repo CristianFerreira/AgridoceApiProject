@@ -1,6 +1,6 @@
-﻿namespace Agridoce.Services.Api.Extensions
+﻿namespace Agridoce.Domain.Configurations
 {
-    public class AppJwtSettings
+    public class TokenConfiguration
     {
         public string SecretKey { get; set; }
         public int ExpirationHours { get; set; }
