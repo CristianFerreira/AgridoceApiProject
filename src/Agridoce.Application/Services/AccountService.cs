@@ -31,9 +31,16 @@ namespace Agridoce.Application.Services
             return _mapper.Map<AccountViewModel>(result.Data as User);
         }
 
-        public async Task<AccountViewModel> RegisterAccount(RegisterAccountViewModel registerAccountViewModel)
+        public async Task<AccountViewModel> RegisterCompanyAccount(RegisterCompanyAccountViewModel registerCompanyAccountViewModel)
         {
-            Command command = _mapper.Map<RegisterAccountCommand>(registerAccountViewModel);
+            Command command = _mapper.Map<RegisterCompanyAccountCommand>(registerCompanyAccountViewModel);
+            ICommandResult result = await _bus.SendCommand(command);
+            return _mapper.Map<AccountViewModel>(result.Data as User);
+        }
+
+        public async Task<AccountViewModel> RegisterEmployeeAccount(RegisterEmployeeAccountViewModel registerEmployeeAccountViewModel)
+        {
+            Command command = _mapper.Map<RegisterEmployeeAccountCommand>(registerEmployeeAccountViewModel);
             ICommandResult result = await _bus.SendCommand(command);
             return _mapper.Map<AccountViewModel>(result.Data as User);
         }

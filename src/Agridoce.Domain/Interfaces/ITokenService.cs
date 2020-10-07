@@ -1,10 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace Agridoce.Domain.Interfaces
 {
     public interface ITokenService
     {
-        Task<string> NewToken(string email);
+        string NewToken(Guid id, IList<string> roles, IList<Claim> claims);
         bool IsValid(string token);
     }
 }

@@ -8,8 +8,11 @@ namespace Agridoce.Application.AutoMapper
     {
         public ViewModelToDomainMappingProfile()
         {
-            CreateMap<RegisterAccountViewModel, RegisterAccountCommand>()
-               .ConstructUsing(c => new RegisterAccountCommand(c.Email, c.Password, c.ConfirmPassword));
+            CreateMap<RegisterCompanyAccountViewModel, RegisterCompanyAccountCommand>()
+               .ConstructUsing(c => new RegisterCompanyAccountCommand(c.Name, c.Email, c.Password, c.ConfirmPassword));
+
+            CreateMap<RegisterEmployeeAccountViewModel, RegisterEmployeeAccountCommand>()
+              .ConstructUsing(c => new RegisterEmployeeAccountCommand(c.Name, c.CompanyUserId, c.Email, c.Password, c.ConfirmPassword));
 
             CreateMap<LoginAccountViewModel, LoginAccountCommand>()
                .ConstructUsing(c => new LoginAccountCommand(c.Email, c.Password));

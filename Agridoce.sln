@@ -29,6 +29,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agridoce.Infra.CrossCutting
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agridoce.Infra.CrossCutting.IoC", "src\Agridoce.Infra.CrossCutting.IoC\Agridoce.Infra.CrossCutting.IoC.csproj", "{05728901-DAE2-48AB-91B4-E95CA51C754D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{E2B9D0F1-E8F1-4C5C-BECE-AD34C9DCE9C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agridoce.Tests", "src\Agridoce.Tests\Agridoce.Tests.csproj", "{A0205B92-2022-4755-9320-237887EB1A8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,10 @@ Global
 		{05728901-DAE2-48AB-91B4-E95CA51C754D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05728901-DAE2-48AB-91B4-E95CA51C754D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05728901-DAE2-48AB-91B4-E95CA51C754D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0205B92-2022-4755-9320-237887EB1A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0205B92-2022-4755-9320-237887EB1A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0205B92-2022-4755-9320-237887EB1A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0205B92-2022-4755-9320-237887EB1A8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +83,7 @@ Global
 		{3FD11320-171A-49E7-B55E-9CC48124EA2C} = {9D46C671-8916-4AD3-96F2-1CAE7E96A5E5}
 		{8BB8CDD1-F39F-47BC-90E3-442737CFC537} = {554CAF06-5BF7-49E4-A507-002BAD928CEB}
 		{05728901-DAE2-48AB-91B4-E95CA51C754D} = {554CAF06-5BF7-49E4-A507-002BAD928CEB}
+		{A0205B92-2022-4755-9320-237887EB1A8A} = {E2B9D0F1-E8F1-4C5C-BECE-AD34C9DCE9C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B0F680B-1CE2-45FD-B953-B0379D7372F3}

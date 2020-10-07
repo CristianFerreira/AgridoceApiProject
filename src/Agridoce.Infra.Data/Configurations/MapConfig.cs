@@ -7,7 +7,9 @@ namespace Agridoce.Infra.Data.Configurations
     {
         public static void AddMapConfiguration(this ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new TestMap());
+            modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new CompanyUserMap());
+            modelBuilder.ApplyConfiguration(new EmployeeUserMap());
         }
     }
 }

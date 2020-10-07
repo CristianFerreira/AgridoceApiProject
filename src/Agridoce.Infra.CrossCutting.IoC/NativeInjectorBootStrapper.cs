@@ -3,6 +3,7 @@ using Agridoce.Application.Services;
 using Agridoce.Domain.Commands.Handlers;
 using Agridoce.Domain.Commands.Types.AccountCommand;
 using Agridoce.Domain.Core;
+using Agridoce.Domain.Factories;
 using Agridoce.Domain.Interfaces;
 using Agridoce.Domain.Services;
 using Agridoce.Infra.CrossCutting.Bus;
@@ -30,9 +31,10 @@ namespace Agridoce.Infra.CrossCutting.IoC
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<ITokenService, TokenService>();
 
-            // Domain - Commands
-            services.AddScoped<IRequestHandler<RegisterAccountCommand, ICommandResult>, AccountCommandHandler>();
+            // Domain - Commands            
             services.AddScoped<IRequestHandler<LoginAccountCommand, ICommandResult>, AccountCommandHandler>();
+            services.AddScoped<IRequestHandler<RegisterCompanyAccountCommand, ICommandResult>, AccountCommandHandler>();
+            services.AddScoped<IRequestHandler<RegisterEmployeeAccountCommand, ICommandResult>, AccountCommandHandler>();
 
             //Handler
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
@@ -43,7 +45,11 @@ namespace Agridoce.Infra.CrossCutting.IoC
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             //Repository
-            services.AddScoped<ITestRepository, TestRepository>(); 
+            services.AddScoped<ITestRepository, TestRepository>();
+
+            //factory
+            services.AddScoped<IUserClaimFactory, UserClaimFactory>();
+            
 
 
 

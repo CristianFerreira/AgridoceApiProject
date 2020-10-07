@@ -6,7 +6,8 @@ namespace Agridoce.Application.Interfaces
     public interface IAccountService
     {
         Task<AccountViewModel> LoginAccount(LoginAccountViewModel accountLoginViewModel);
-        Task<AccountViewModel> RegisterAccount(RegisterAccountViewModel registerAccountViewModel);
+        Task<AccountViewModel> RegisterCompanyAccount(RegisterCompanyAccountViewModel registerCompanyAccountViewModel);
+        Task<AccountViewModel> RegisterEmployeeAccount(RegisterEmployeeAccountViewModel registerEmployeeAccountViewModel);
         bool ValidateAccountToken(string token);
     }
 }

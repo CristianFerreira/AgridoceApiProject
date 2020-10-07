@@ -33,6 +33,9 @@ namespace Agridoce.Services.Api
             // JWT
             services.AddTokenConfiguration(Configuration);
 
+            // Claim
+            services.AddClaimConfiguration(Configuration);
+
             // WebAPI Config
             services.AddControllers();
 

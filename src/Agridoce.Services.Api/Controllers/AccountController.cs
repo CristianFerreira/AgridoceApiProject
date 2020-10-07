@@ -1,45 +1,52 @@
 ﻿using Agridoce.Application.Interfaces;
 using Agridoce.Application.ViewModels.AccountViewModels;
 using Agridoce.Domain.Core;
-using Agridoce.Domain.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using static Agridoce.Services.Api.Extensions.CustomAuthorization;
 
 namespace Agridoce.Services.Api.Controllers
 {
     [Route("api/[controller]")]
     public class AccountController : ApiController
     {
-        private readonly SignInManager<User> _signInManager;
         private readonly IAccountService _accountService;
-        private readonly UserManager<User> _userManager;
 
         public AccountController(
-            SignInManager<User> signInManager,
-            UserManager<User> userManager,
             IAccountService accountService,
             INotificationHandler<DomainNotification> notifications) : base(notifications)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
             _accountService = accountService;
         }
 
         [HttpPost]
-        [Route("register")]
+        [Route("company")]
+        [AllowAnonymous]
         [ProducesResponseType(typeof(SuccessfulResponse<AccountViewModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Register(RegisterAccountViewModel registerAccountViewModel)
+        public async Task<IActionResult> Register(RegisterCompanyAccountViewModel registerCompanyAccountViewModel)
         {
-            var account = await _accountService.RegisterAccount(registerAccountViewModel);
+            var account = await _accountService.RegisterCompanyAccount(registerCompanyAccountViewModel);
+            return Response(account);
+        }
+
+        [HttpPost]
+        [Route("employee")]
+        [CustomAuthorize("EmployeeAccount", "Write")]
+        [ProducesResponseType(typeof(SuccessfulResponse<AccountViewModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Register(RegisterEmployeeAccountViewModel registerEmployeeAccountViewModel)
+        {
+            var account = await _accountService.RegisterEmployeeAccount(registerEmployeeAccountViewModel);
             return Response(account);
         }
 
         [HttpPost]
         [Route("token")]
+        [AllowAnonymous]
         [ProducesResponseType(typeof(SuccessfulResponse<AccountViewModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Login(LoginAccountViewModel accountLoginViewModel)
@@ -51,6 +58,7 @@ namespace Agridoce.Services.Api.Controllers
 
         [HttpPost]
         [Route("token/validate")]
+        [AllowAnonymous]
         [ProducesResponseType(typeof(SuccessfulResponse<string>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
         public IActionResult ValidateAccountToken(string token)
@@ -58,9 +66,5 @@ namespace Agridoce.Services.Api.Controllers
             var isValid = _accountService.ValidateAccountToken(token);
             return Response(isValid);
         }
-
-
-
-
     }
 }

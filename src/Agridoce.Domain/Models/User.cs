@@ -1,4 +1,5 @@
 ﻿using Agridoce.Domain.Core;
+using Agridoce.Domain.Enums;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,16 @@ namespace Agridoce.Domain.Models
 {
     public class User : IdentityUser<Guid>, IEntity
     {
-        public User(Guid id, string email)
+        
+        [NotMapped]
+        public string Token { get; private set; }
+        [NotMapped]
+        public IList<Claim> Claims { get; private set; }
+        public UserType UserType { get; private set; }
+        public EmployeeUser EmployeeUser { get; private set; }
+        public CompanyUser CompanyUser { get; private set; }
+
+        public User(Guid id, string email, IList<Claim> claims)
         {
             Id = id;
             Email = email;
@@ -17,12 +27,9 @@ namespace Agridoce.Domain.Models
             EmailConfirmed = true;
             AccessFailedCount = 0;
             LockoutEnabled = false;
-            Claims = new List<Claim>();
+            Claims = claims;
         }
-
-        protected IList<Claim> Claims { get; set; }
-        [NotMapped]
-        protected string Token { get; set; }
+        protected User() {}
 
         public void AddClaims(string type, string value)
         {

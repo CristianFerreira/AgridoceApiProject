@@ -2,7 +2,7 @@
 
 namespace Agridoce.Domain.Interfaces
 {
-    public interface ITestRepository : IRepository<Test>
+    public interface ITestRepository : IRepository<object>
     {
     }
 }

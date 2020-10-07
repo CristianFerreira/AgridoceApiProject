@@ -1,25 +1,23 @@
 ﻿using Agridoce.Domain.Configurations;
 using Agridoce.Domain.Interfaces;
 using Agridoce.Domain.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Agridoce.Domain.Services
 {
     public class TokenService : ITokenService
     {
-        private readonly UserManager<User> _userManager;
         private readonly TokenConfiguration _tokenConfiguration;
 
-        public TokenService(UserManager<User> userManager, IOptions<TokenConfiguration> tokenConfiguration)
+        public TokenService(IOptions<TokenConfiguration> tokenConfiguration)
         {
-            _userManager = userManager;
             _tokenConfiguration = tokenConfiguration.Value;
         }
 
@@ -48,18 +46,16 @@ namespace Agridoce.Domain.Services
             return true;
         }
 
-        public async Task<string> NewToken(string email)
+        public string NewToken(Guid id, IList<string> roles, IList<Claim> claims)
         {
-            var user = await _userManager.FindByEmailAsync(email);
-            var identityClaims = new ClaimsIdentity();
-            identityClaims.AddClaims(await _userManager.GetClaimsAsync(user));
+            var claimsIdentity = CreateClaimsIdentity(id, roles, claims);
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_tokenConfiguration.SecretKey);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = identityClaims,
+                Subject = claimsIdentity,
                 Issuer = _tokenConfiguration.Issuer,
                 Audience = _tokenConfiguration.Audience,
                 Expires = DateTime.UtcNow.AddHours(_tokenConfiguration.ExpirationHours),
@@ -67,6 +63,20 @@ namespace Agridoce.Domain.Services
                     SecurityAlgorithms.HmacSha256Signature)
             };
             return tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
+        }
+
+        private ClaimsIdentity CreateClaimsIdentity(Guid id, IList<string> roles, IList<Claim> claims)
+        {
+            Claim[] newClaims = new[]
+                                   {
+                                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
+                                        new Claim(JwtRegisteredClaimNames.UniqueName, id.ToString())
+                                   };
+            ClaimsIdentity claimsIdentity = new ClaimsIdentity(newClaims, "Token");
+            claimsIdentity.AddClaims(roles.Select(role => new Claim(ClaimTypes.Role, role)));
+            claimsIdentity.AddClaims(claims);
+
+            return claimsIdentity;
         }
     }
 }
