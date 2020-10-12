@@ -1,7 +1,10 @@
 ﻿using Agridoce.Domain.Core;
 using Agridoce.Domain.Interfaces;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Storage;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Agridoce.Domain.Commands.Handlers
@@ -40,6 +43,14 @@ namespace Agridoce.Domain.Commands.Handlers
             _bus.PublishEvent(new DomainNotification(string.Empty, message));
         }
 
+        protected void AddError(IEnumerable<IdentityError> identityErrors)
+        {
+            foreach (var error in identityErrors)
+            {
+                _bus.PublishEvent(new DomainNotification(string.Empty, error.Description));
+            }        
+        }
+
         protected async Task PublishEventAsync(Event @event)
         {
             await _bus.PublishEvent(@event);
@@ -50,12 +61,12 @@ namespace Agridoce.Domain.Commands.Handlers
             _bus.PublishEvent(@event);
         }
 
-        protected async Task<ICommandResult> CompletedTaskAsync(dynamic data = null)
+        protected async Task<ICommandResult> CreateResultAsync(object data = null)
         {
             return await Task.FromResult(new CommandResult(data));
         }
 
-        protected ICommandResult CompletedTask(dynamic data = null)
+        protected ICommandResult CreateResult(object data = null)
         {
             return new CommandResult(data);
         }

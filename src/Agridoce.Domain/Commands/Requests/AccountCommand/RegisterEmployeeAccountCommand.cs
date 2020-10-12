@@ -1,7 +1,7 @@
 ﻿using Agridoce.Domain.Enums;
 using System;
 
-namespace Agridoce.Domain.Commands.Types.AccountCommand
+namespace Agridoce.Domain.Commands.Requests.AccountCommand
 {
     public class RegisterEmployeeAccountCommand : AccountCommand
     {
@@ -10,7 +10,6 @@ namespace Agridoce.Domain.Commands.Types.AccountCommand
 
         public RegisterEmployeeAccountCommand(string name, Guid companyUserId, string email, string password, string confirmPassword)
         {
-            Id = Guid.NewGuid();
             Name = name;
             CompanyUserId = companyUserId;
             Email = email;

@@ -1,4 +1,4 @@
-﻿using Agridoce.Domain.Interfaces;
+﻿using Agridoce.Domain.Interfaces.Repositories;
 using Agridoce.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using System;

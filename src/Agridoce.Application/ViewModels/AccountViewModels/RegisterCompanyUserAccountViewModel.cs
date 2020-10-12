@@ -1,6 +1,6 @@
 ﻿namespace Agridoce.Application.ViewModels.AccountViewModels
 {
-    public class RegisterCompanyAccountViewModel : RegisterAccountViewModel
+    public class RegisterCompanyUserAccountViewModel : RegisterUserAccountViewModel
     {
         public string Name { get; set; }
     }

@@ -1,8 +1,7 @@
-﻿using Agridoce.Domain.Core;
-using System;
+﻿using System;
 using System.Linq;
 
-namespace Agridoce.Domain.Interfaces
+namespace Agridoce.Domain.Interfaces.Repositories
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : class
     {

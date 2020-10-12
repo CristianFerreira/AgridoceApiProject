@@ -1,10 +1,11 @@
 ﻿using Agridoce.Application.Interfaces;
 using Agridoce.Application.Services;
 using Agridoce.Domain.Commands.Handlers;
-using Agridoce.Domain.Commands.Types.AccountCommand;
+using Agridoce.Domain.Commands.Requests.AccountCommand;
 using Agridoce.Domain.Core;
 using Agridoce.Domain.Factories;
 using Agridoce.Domain.Interfaces;
+using Agridoce.Domain.Interfaces.Repositories;
 using Agridoce.Domain.Services;
 using Agridoce.Infra.CrossCutting.Bus;
 using Agridoce.Infra.Data.Context;
@@ -45,7 +46,9 @@ namespace Agridoce.Infra.CrossCutting.IoC
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             //Repository
-            services.AddScoped<ITestRepository, TestRepository>();
+            services.AddScoped<ICompanyUserRepository, CompanyUserRepository>();
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             //factory
             services.AddScoped<IUserClaimFactory, UserClaimFactory>();

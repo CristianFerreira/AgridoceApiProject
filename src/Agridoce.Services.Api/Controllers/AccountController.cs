@@ -25,9 +25,9 @@ namespace Agridoce.Services.Api.Controllers
         [HttpPost]
         [Route("company")]
         [AllowAnonymous]
-        [ProducesResponseType(typeof(SuccessfulResponse<AccountViewModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(SuccessfulResponse<UserAccountViewModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Register(RegisterCompanyAccountViewModel registerCompanyAccountViewModel)
+        public async Task<IActionResult> Register(RegisterCompanyUserAccountViewModel registerCompanyAccountViewModel)
         {
             var account = await _accountService.RegisterCompanyAccount(registerCompanyAccountViewModel);
             return Response(account);
@@ -36,7 +36,7 @@ namespace Agridoce.Services.Api.Controllers
         [HttpPost]
         [Route("employee")]
         [CustomAuthorize("EmployeeAccount", "Write")]
-        [ProducesResponseType(typeof(SuccessfulResponse<AccountViewModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(SuccessfulResponse<UserAccountViewModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Register(RegisterEmployeeAccountViewModel registerEmployeeAccountViewModel)
         {
@@ -47,7 +47,7 @@ namespace Agridoce.Services.Api.Controllers
         [HttpPost]
         [Route("token")]
         [AllowAnonymous]
-        [ProducesResponseType(typeof(SuccessfulResponse<AccountViewModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(SuccessfulResponse<UserAccountViewModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Login(LoginAccountViewModel accountLoginViewModel)
         {

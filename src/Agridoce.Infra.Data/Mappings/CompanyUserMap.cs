@@ -8,20 +8,13 @@ namespace Agridoce.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<CompanyUser> builder)
         {
-            builder.HasKey(c => c.Id);
-
-            builder.Property(c => c.Name)
-                .HasColumnType("varchar(256)")
-                .HasMaxLength(256)
-                .IsRequired();
+            builder.HasKey(c => new { c.UserId, c.CompanyId });
 
             builder.HasOne(c => c.User)
-                        .WithOne(c => c.CompanyUser)
-                             .OnDelete(DeleteBehavior.SetNull);
+                        .WithMany(c => c.CompanyUsers);
 
-            builder.HasMany(c => c.EmployeeUsers)
-                        .WithOne(c => c.CompanyUser)
-                             .OnDelete(DeleteBehavior.SetNull);
+            builder.HasOne(c => c.Company)
+                        .WithMany(c => c.CompanyUsers);
 
             builder.ToTable("CompanyUsers");
         }

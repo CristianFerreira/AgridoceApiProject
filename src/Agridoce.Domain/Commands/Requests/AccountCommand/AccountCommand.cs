@@ -2,7 +2,7 @@
 using Agridoce.Domain.Enums;
 using System;
 
-namespace Agridoce.Domain.Commands.Types.AccountCommand
+namespace Agridoce.Domain.Commands.Requests.AccountCommand
 {
     public class AccountCommand : Command
     {

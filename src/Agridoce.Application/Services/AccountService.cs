@@ -1,6 +1,7 @@
 ﻿using Agridoce.Application.Interfaces;
 using Agridoce.Application.ViewModels.AccountViewModels;
-using Agridoce.Domain.Commands.Types.AccountCommand;
+using Agridoce.Domain.Commands.Requests.AccountCommand;
+using Agridoce.Domain.Commands.Responses;
 using Agridoce.Domain.Core;
 using Agridoce.Domain.Interfaces;
 using Agridoce.Domain.Models;
@@ -24,25 +25,25 @@ namespace Agridoce.Application.Services
             _bus = bus;
         }
 
-        public async Task<AccountViewModel> LoginAccount(LoginAccountViewModel accountLoginViewModel)
+        public async Task<UserAccountViewModel> LoginAccount(LoginAccountViewModel accountLoginViewModel)
         {
             Command command = _mapper.Map<LoginAccountCommand>(accountLoginViewModel);
             ICommandResult result = await _bus.SendCommand(command);
-            return _mapper.Map<AccountViewModel>(result.Data as User);
+            return _mapper.Map<UserAccountViewModel>(result.Data as AccountCommandResult);
         }
 
-        public async Task<AccountViewModel> RegisterCompanyAccount(RegisterCompanyAccountViewModel registerCompanyAccountViewModel)
+        public async Task<UserAccountViewModel> RegisterCompanyAccount(RegisterCompanyUserAccountViewModel registerCompanyAccountViewModel)
         {
             Command command = _mapper.Map<RegisterCompanyAccountCommand>(registerCompanyAccountViewModel);
             ICommandResult result = await _bus.SendCommand(command);
-            return _mapper.Map<AccountViewModel>(result.Data as User);
+            return _mapper.Map<UserAccountViewModel>(result.Data as AccountCommandResult);
         }
 
-        public async Task<AccountViewModel> RegisterEmployeeAccount(RegisterEmployeeAccountViewModel registerEmployeeAccountViewModel)
+        public async Task<UserAccountViewModel> RegisterEmployeeAccount(RegisterEmployeeAccountViewModel registerEmployeeAccountViewModel)
         {
             Command command = _mapper.Map<RegisterEmployeeAccountCommand>(registerEmployeeAccountViewModel);
             ICommandResult result = await _bus.SendCommand(command);
-            return _mapper.Map<AccountViewModel>(result.Data as User);
+            return _mapper.Map<UserAccountViewModel>(result.Data as AccountCommandResult);
         }
 
         public bool ValidateAccountToken(string token)

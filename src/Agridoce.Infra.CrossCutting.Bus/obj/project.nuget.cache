@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q328ixDWtA62j520HdLNzYQhwica4w7tpVS95a0qoZL06jg7R+Ou7gs68aUEd4ST0gu7Yu/M1+U5I/5PKbEdzw==",
+  "dgSpecHash": "JYkqkln4ZUUwOW085KyDIi63L00Oz/4vdRQUsE8FnEJxNBVhOfaDeJPk7z+8xpGbBXISAgFh3G61XgJQKlD2cw==",
   "success": true,
-  "projectFilePath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.Bus\\Agridoce.Infra.CrossCutting.Bus.csproj",
+  "projectFilePath": "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.Bus\\Agridoce.Infra.CrossCutting.Bus.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

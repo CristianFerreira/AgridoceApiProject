@@ -4,17 +4,17 @@ using System.Security.Claims;
 
 namespace Agridoce.Application.ViewModels.AccountViewModels
 {
-    public class AccountViewModel
+    public class UserAccountViewModel
     {
-        public AccountViewModel(Guid id, string email, string token, IList<Claim> claims)
+        public UserAccountViewModel(Guid userId, string email, string token, IList<Claim> claims)
         {
-            Id = id;
+            UserId = userId;
             Email = email;
             Token = token;
             Claims = TransformAccountClaimViewModel(claims);
         }
 
-        public Guid Id { get; }
+        public Guid UserId { get; }
         public string Email { get; }
         public string Token { get; }
         public IList<AccountClaimViewModel> Claims { get; }

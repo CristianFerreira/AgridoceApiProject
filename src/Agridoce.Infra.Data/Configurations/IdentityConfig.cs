@@ -11,7 +11,7 @@ namespace Agridoce.Infra.Data.Configurations
         {
             builder.Entity<User>().ToTable("Users");
 
-            builder.Entity<Role>().ToTable("Roles");
+            builder.Entity<IdentityRole<Guid>>().ToTable("Roles");
 
             builder.Entity<IdentityUserClaim<Guid>>().ToTable("UserClaims");
 

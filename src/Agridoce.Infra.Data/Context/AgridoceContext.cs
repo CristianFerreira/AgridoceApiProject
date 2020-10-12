@@ -1,5 +1,6 @@
 ﻿using Agridoce.Domain.Models;
 using Agridoce.Infra.Data.Configurations;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,10 +8,10 @@ using System.Linq;
 
 namespace Agridoce.Infra.Data.Context
 {
-    public class AgridoceContext : IdentityDbContext<User, Role, Guid>
+    public class AgridoceContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
     {
         public DbSet<CompanyUser> CompanyUsers { get; set; }
-        public DbSet<EmployeeUser> EmployeeUsers { get; set; }
+        public DbSet<Company> Companies { get; set; }
 
         public AgridoceContext(DbContextOptions<AgridoceContext> options) : base(options) { }
 

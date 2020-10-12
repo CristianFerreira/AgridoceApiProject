@@ -6,7 +6,7 @@ namespace Agridoce.Domain.Interfaces
 {
     public interface ITokenService
     {
-        string NewToken(Guid id, IList<string> roles, IList<Claim> claims);
+        string NewToken(Guid key, IList<Claim> claims);
         bool IsValid(string token);
     }
 }

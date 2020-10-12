@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj": {}
+    "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj": {
+    "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj",
+        "projectUniqueName": "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj",
         "projectName": "Agridoce.Domain.Core",
-        "projectPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj",
+        "projectPath": "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\obj\\",
+        "outputPath": "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

@@ -11,7 +11,7 @@ namespace Agridoce.Services.Api.Configurations
         public static void AddIdentityConfiguration(this IServiceCollection services)
         {
 
-            services.AddIdentity<User, Role>()
+            services.AddIdentity<User, IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<AgridoceContext>()
                 .AddDefaultTokenProviders();
 

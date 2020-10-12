@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WqaWFj8BKwl9l0gM/C0JyYy2J92E54szSBhBQFdKy2AfemfMFGMBqgsLCA4NxAsNghNAGnE9fOWLEUFWrPLIdA==",
+  "dgSpecHash": "SufNyyoSjcHTTY6xKUxfFSUPgSeygFgdatYQg0WEpnB1HLuE/JbVx624MtOBaq5e0SwDBIN0FYCatc3OHxp/Vw==",
   "success": true,
-  "projectFilePath": "C:\\Dev\\net core 3\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj",
+  "projectFilePath": "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

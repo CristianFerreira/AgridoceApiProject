@@ -1,5 +1,5 @@
 ﻿using Agridoce.Application.ViewModels.AccountViewModels;
-using Agridoce.Domain.Commands.Types.AccountCommand;
+using Agridoce.Domain.Commands.Requests.AccountCommand;
 using AutoMapper;
 
 namespace Agridoce.Application.AutoMapper
@@ -8,7 +8,7 @@ namespace Agridoce.Application.AutoMapper
     {
         public ViewModelToDomainMappingProfile()
         {
-            CreateMap<RegisterCompanyAccountViewModel, RegisterCompanyAccountCommand>()
+            CreateMap<RegisterCompanyUserAccountViewModel, RegisterCompanyAccountCommand>()
                .ConstructUsing(c => new RegisterCompanyAccountCommand(c.Name, c.Email, c.Password, c.ConfirmPassword));
 
             CreateMap<RegisterEmployeeAccountViewModel, RegisterEmployeeAccountCommand>()

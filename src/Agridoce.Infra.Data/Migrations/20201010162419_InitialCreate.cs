@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Agridoce.Infra.Data.Migrations
 {
-    public partial class InitialUser : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,6 +45,18 @@ namespace Agridoce.Infra.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Companies",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Companies", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -157,41 +169,20 @@ namespace Agridoce.Infra.Data.Migrations
                 name: "CompanyUsers",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    UserId = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: false)
+                    CompanyId = table.Column<Guid>(nullable: false),
+                    UserId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CompanyUsers", x => x.Id);
+                    table.PrimaryKey("PK_CompanyUsers", x => new { x.UserId, x.CompanyId });
+                    table.ForeignKey(
+                        name: "FK_CompanyUsers_Companies_CompanyId",
+                        column: x => x.CompanyId,
+                        principalTable: "Companies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_CompanyUsers_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EmployeeUsers",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    CompanyUserId = table.Column<Guid>(nullable: false),
-                    UserId = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EmployeeUsers", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_EmployeeUsers_CompanyUsers_CompanyUserId",
-                        column: x => x.CompanyUserId,
-                        principalTable: "CompanyUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_EmployeeUsers_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -238,21 +229,9 @@ namespace Agridoce.Infra.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CompanyUsers_UserId",
+                name: "IX_CompanyUsers_CompanyId",
                 table: "CompanyUsers",
-                column: "UserId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EmployeeUsers_CompanyUserId",
-                table: "EmployeeUsers",
-                column: "CompanyUserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EmployeeUsers_UserId",
-                table: "EmployeeUsers",
-                column: "UserId",
-                unique: true);
+                column: "CompanyId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -273,13 +252,13 @@ namespace Agridoce.Infra.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "EmployeeUsers");
+                name: "CompanyUsers");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "CompanyUsers");
+                name: "Companies");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

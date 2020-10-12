@@ -1,16 +1,23 @@
 ﻿using Agridoce.Domain.Core;
 using System;
-using System.Collections.Generic;
 
 namespace Agridoce.Domain.Models
 {
-    public class CompanyUser : IEntity
+    public class CompanyUser
     {
+        public CompanyUser(Company company, User user)
+        {
+            CompanyId = company.Id;
+            UserId = user.Id;
+            Company = company;
+            User = user;
+        }
+
         protected  CompanyUser() {}
-        public Guid Id { get; set; }
-        public Guid UserId { get; set; }
-        public string Name { get; set; }
-        public User User { get; set; }
-        public ICollection<EmployeeUser> EmployeeUsers { get; private set; }
+
+        public Guid CompanyId { get; }
+        public Guid UserId { get; }
+        public Company Company { get; }
+        public User User { get; }
     }
 }

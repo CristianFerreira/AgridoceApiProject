@@ -24,13 +24,8 @@ namespace Agridoce.Infra.Data.Mappings
             builder.Property(u => u.UserType)
                 .IsRequired();
 
-            builder.HasOne(c => c.EmployeeUser)
-                       .WithOne(c => c.User)
-                               .OnDelete(DeleteBehavior.SetNull);
-
-            builder.HasOne(c => c.CompanyUser)
-                       .WithOne(c => c.User)
-                               .OnDelete(DeleteBehavior.SetNull);
+            builder.HasMany(c => c.CompanyUsers)
+                       .WithOne(c => c.User);
 
             builder.ToTable("Users");
         }

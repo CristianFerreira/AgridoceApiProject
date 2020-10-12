@@ -1,12 +1,10 @@
 ﻿using Agridoce.Domain.Configurations;
 using Agridoce.Domain.Interfaces;
-using Agridoce.Domain.Models;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
 
@@ -46,12 +44,12 @@ namespace Agridoce.Domain.Services
             return true;
         }
 
-        public string NewToken(Guid id, IList<string> roles, IList<Claim> claims)
+        public string NewToken(Guid key, IList<Claim> claims)
         {
-            var claimsIdentity = CreateClaimsIdentity(id, roles, claims);
+            var claimsIdentity = CreateClaimsIdentity(key, claims);
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_tokenConfiguration.SecretKey);
+            var secretKey = Encoding.ASCII.GetBytes(_tokenConfiguration.SecretKey);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
@@ -59,21 +57,20 @@ namespace Agridoce.Domain.Services
                 Issuer = _tokenConfiguration.Issuer,
                 Audience = _tokenConfiguration.Audience,
                 Expires = DateTime.UtcNow.AddHours(_tokenConfiguration.ExpirationHours),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKey),
                     SecurityAlgorithms.HmacSha256Signature)
             };
             return tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
         }
 
-        private ClaimsIdentity CreateClaimsIdentity(Guid id, IList<string> roles, IList<Claim> claims)
+        private ClaimsIdentity CreateClaimsIdentity(Guid key, IList<Claim> claims)
         {
             Claim[] newClaims = new[]
                                    {
                                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
-                                        new Claim(JwtRegisteredClaimNames.UniqueName, id.ToString())
+                                        new Claim(JwtRegisteredClaimNames.UniqueName, key.ToString())
                                    };
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(newClaims, "Token");
-            claimsIdentity.AddClaims(roles.Select(role => new Claim(ClaimTypes.Role, role)));
             claimsIdentity.AddClaims(claims);
 
             return claimsIdentity;
