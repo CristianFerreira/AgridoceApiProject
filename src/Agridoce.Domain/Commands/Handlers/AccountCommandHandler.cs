@@ -15,8 +15,8 @@ using System.Threading.Tasks;
 namespace Agridoce.Domain.Commands.Handlers
 {
     public class AccountCommandHandler : CommandHandler,
-          IRequestHandler<RegisterCompanyAccountCommand, ICommandResult>,
-          IRequestHandler<RegisterEmployeeAccountCommand, ICommandResult>,    
+          IRequestHandler<RegisterCompanyUserAccountCommand, ICommandResult>,
+          IRequestHandler<RegisterEmployeeUserAccountCommand, ICommandResult>,    
           IRequestHandler<LoginAccountCommand, ICommandResult>
     {
         private readonly SignInManager<User> _signInManager;
@@ -56,7 +56,7 @@ namespace Agridoce.Domain.Commands.Handlers
                 var user = await _userManager.FindByEmailAsync(command.Email);
                 if (user.LockoutEnabled)
                 {
-                    AddError("This user is temporarily blocked");
+                    AddError("Usuário está temporariamente bloqueado.");
                     return CanceledTask();
                 }
                 var claims = await _userManager.GetClaimsAsync(user);
@@ -67,17 +67,17 @@ namespace Agridoce.Domain.Commands.Handlers
                 return CreateResult(data);
             }
 
-            AddError("Incorrect user or password");
+            AddError("E-mail ou Senha inválidos.");
             return CanceledTask();
         }
 
-        public async Task<ICommandResult> Handle(RegisterCompanyAccountCommand command, CancellationToken cancellationToken)
+        public async Task<ICommandResult> Handle(RegisterCompanyUserAccountCommand command, CancellationToken cancellationToken)
         {
             using var transaction = _uow.BeginTransaction();
             {
-                if(_userRepository.GetByEmail(command.Email) != null)
+                if(await HaveEmailRegistered(command.Email))
                 {
-                    AddError("User email is already registered");
+                    AddError("E-mail já cadastrado.");
                     return await CanceledTaskAsync();
                 }
 
@@ -113,9 +113,55 @@ namespace Agridoce.Domain.Commands.Handlers
             }
         }
 
-        public Task<ICommandResult> Handle(RegisterEmployeeAccountCommand request, CancellationToken cancellationToken)
+        public async Task<ICommandResult> Handle(RegisterEmployeeUserAccountCommand command, CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            using var transaction = _uow.BeginTransaction();
+            {
+                if (await HaveEmailRegistered(command.Email))
+                {
+                    AddError("E-mail já cadastrado");
+                    return await CanceledTaskAsync();
+                }
+
+                var claims = _userClaimFactory.Create(UserType.Employee).Get();
+                var user = new User(Guid.NewGuid(), command.Email);
+                var identityResultOfUser = await _userManager.CreateAsync(user, command.Password);
+
+                if (identityResultOfUser.Succeeded)
+                {
+                    var identityResultOfClaims = await _userManager.AddClaimsAsync(user, claims);
+
+                    if (identityResultOfClaims.Succeeded)
+                    {
+                        var company = _companyRepository.GetById(command.CompanyId);
+                        if(company != null)
+                        {
+                            var companyUser = new CompanyUser(company, user);
+                            _companyUserRepository.Add(companyUser);
+
+                            var token = _tokenService.NewToken(user.Id, claims);
+                            _uow.Commit(transaction);
+
+                            var data = new AccountCommandResult(user.Id, user.Email, token, claims);
+                            return CreateResult(data);
+                        }
+
+                        AddError($"Nenhuma companhia encontrada com o identificador: {command.CompanyId}");
+                        return await CanceledTaskAsync();
+                    }
+
+                    AddError(identityResultOfClaims.Errors);
+                    return await CanceledTaskAsync();
+                }
+
+                AddError(identityResultOfUser.Errors);
+                return await CanceledTaskAsync();
+            }
+        }
+
+        private async Task<bool> HaveEmailRegistered(string email)
+        {
+            return await _userRepository.GetByEmail(email) != null;
         }
     }
 }

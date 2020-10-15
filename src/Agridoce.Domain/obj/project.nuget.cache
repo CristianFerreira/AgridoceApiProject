@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/GncNc7wdwPuo4AvlVkZ4xXJgw2I46JF79UoryaxsFAYUv+Akww/BGhoF15dpMbQZb3uLXiSdmFqViK4L9MIEA==",
+  "dgSpecHash": "LU7Agi11SVdZAArN7g7ePJgz+m1cyNN5DbHszYday0vmERJkDUHdsu6YHat8XLpcmZ8CvvLfQWB4ZJ+GNHE/8w==",
   "success": true,
   "projectFilePath": "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Domain\\Agridoce.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

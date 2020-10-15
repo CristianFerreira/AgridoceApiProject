@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "GALhiYpY5UFkOrhJfYWw0oFQRTTr5TDkgb8oeBWWW+fWkVgdHhwDQcOVSNd2uoCoYVXnib7XpZCAsWeiRHv/jw==",
+  "dgSpecHash": "gjNoTzDNxfGsxocHRhPIARcLGCkb6IMoT9Krst7q9ZYmuHqqZXuVj6UMNFaK4jiyshQfWvtvh23XU77gCPEGRg==",
   "success": true,
   "projectFilePath": "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.IoC\\Agridoce.Infra.CrossCutting.IoC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

@@ -51,6 +51,13 @@ namespace Agridoce.Services.Api
             // .NET Native DI Abstraction
             services.AddDependencyInjectionConfiguration();
 
+
+            //Filter
+            services.AddMvc(config =>
+            {
+                config.Filters.Add(typeof(CustomExceptionFilter));
+
+            });
         }
 
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -82,6 +89,6 @@ namespace Agridoce.Services.Api
             app.UseSwaggerSetup();
         }
 
-       
+
     }
 }

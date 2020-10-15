@@ -4,7 +4,7 @@ using System;
 
 namespace Agridoce.Domain.Commands.Requests.AccountCommand
 {
-    public class AccountCommand : Command
+    public class UserAccountCommand : Command
     {
         public Guid Id { get; protected set; }
 

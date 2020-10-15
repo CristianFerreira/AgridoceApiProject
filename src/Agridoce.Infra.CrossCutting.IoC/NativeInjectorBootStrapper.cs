@@ -2,6 +2,7 @@
 using Agridoce.Application.Services;
 using Agridoce.Domain.Commands.Handlers;
 using Agridoce.Domain.Commands.Requests.AccountCommand;
+using Agridoce.Domain.Commands.Validations;
 using Agridoce.Domain.Core;
 using Agridoce.Domain.Factories;
 using Agridoce.Domain.Interfaces;
@@ -34,8 +35,8 @@ namespace Agridoce.Infra.CrossCutting.IoC
 
             // Domain - Commands            
             services.AddScoped<IRequestHandler<LoginAccountCommand, ICommandResult>, AccountCommandHandler>();
-            services.AddScoped<IRequestHandler<RegisterCompanyAccountCommand, ICommandResult>, AccountCommandHandler>();
-            services.AddScoped<IRequestHandler<RegisterEmployeeAccountCommand, ICommandResult>, AccountCommandHandler>();
+            services.AddScoped<IRequestHandler<RegisterCompanyUserAccountCommand, ICommandResult>, AccountCommandHandler>();
+            services.AddScoped<IRequestHandler<RegisterEmployeeUserAccountCommand, ICommandResult>, AccountCommandHandler>();
 
             //Handler
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
@@ -52,7 +53,9 @@ namespace Agridoce.Infra.CrossCutting.IoC
 
             //factory
             services.AddScoped<IUserClaimFactory, UserClaimFactory>();
-            
+
+            //validation
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(FailFastValidation<,>));
 
 
 

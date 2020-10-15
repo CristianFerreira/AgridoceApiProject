@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JYkqkln4ZUUwOW085KyDIi63L00Oz/4vdRQUsE8FnEJxNBVhOfaDeJPk7z+8xpGbBXISAgFh3G61XgJQKlD2cw==",
+  "dgSpecHash": "cxRZqRy+qZj1wQurOeb0USTjjZQvRV6YoDYwQh6ydvWU60yRSaMxgQ1S9xE85JJxT5FgNKzJ07Al74+NKCZ0ZQ==",
   "success": true,
   "projectFilePath": "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Infra.CrossCutting.Bus\\Agridoce.Infra.CrossCutting.Bus.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SufNyyoSjcHTTY6xKUxfFSUPgSeygFgdatYQg0WEpnB1HLuE/JbVx624MtOBaq5e0SwDBIN0FYCatc3OHxp/Vw==",
+  "dgSpecHash": "3ZZ3onKH2+TWbelqbHcAKriZdegN61tLmnbXrdFInSXo/8wzgAH85PvxpIru8qMlLS4mto21IPajBNjepQ1Q/Q==",
   "success": true,
   "projectFilePath": "C:\\Dev\\AgridoceApiProject\\src\\Agridoce.Domain.Core\\Agridoce.Domain.Core.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

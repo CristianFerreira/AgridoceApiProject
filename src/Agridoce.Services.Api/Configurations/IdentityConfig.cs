@@ -24,7 +24,7 @@ namespace Agridoce.Services.Api.Configurations
                       options.Lockout.MaxFailedAccessAttempts = 5;
 
                       //Password
-                      options.Password.RequireDigit = true;
+                      options.Password.RequireDigit = false;
                       options.Password.RequiredLength = 6;
                       options.Password.RequiredUniqueChars = 1;
                       options.Password.RequireLowercase = false;
@@ -37,7 +37,7 @@ namespace Agridoce.Services.Api.Configurations
 
                       //User
                       options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-                      options.User.RequireUniqueEmail = false;
+                      options.User.RequireUniqueEmail = true;
                   });
         }
     }
